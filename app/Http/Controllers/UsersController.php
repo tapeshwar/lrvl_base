@@ -3,14 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+//use App\Models\User;
 
-class Users extends Controller
+//UserController 
+class UsersController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+    
     public function index()
     {
         //
@@ -80,5 +84,9 @@ class Users extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function login(){
+        echo 'test';
     }
 }

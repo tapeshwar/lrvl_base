@@ -30,7 +30,7 @@
               </div>
               
               <h6 class="font-weight-light">Sign In.</h6>
-              <form method="post" class="pt-3" id="user_login_form" data-url="<?=URL::route('Users/login')?>">
+              <form method="post" class="pt-3" id="user_login_form" action="">
                 <div class="form-group">
                   <input type="text" name="username" class="form-control form-control-lg" required placeholder="Username">
                 </div>
