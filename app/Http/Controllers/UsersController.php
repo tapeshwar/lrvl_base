@@ -17,7 +17,7 @@ class UsersController extends Controller
     
     public function index()
     {
-        //
+        echo 'test';
     }
 
     /**
@@ -27,7 +27,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        echo 'test';
     }
 
     /**
@@ -38,7 +38,12 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //url('/') // use for base url for post method
+        //Request::root() // use for base url post method
+        // URL::to('/') // use for base url post method
+        $postdata = $request->all();
+
+        echo $postdata['username'];
     }
 
     /**
@@ -86,7 +91,7 @@ class UsersController extends Controller
         //
     }
 
-    public function login(){
+    public function user_login(){
         echo 'test';
     }
 }

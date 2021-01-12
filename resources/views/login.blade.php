@@ -7,13 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Majestic Admin Pro</title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="assets/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="assets/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="{{ asset('public/assets/css/materialdesignicons.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('public/assets/css/vendor.bundle.base.css') }}">
   <!-- endinject -->
   <!-- plugin css for this page -->
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="{{ asset('public/assets/css/style.css') }}">
   <!-- endinject -->
   <link rel="shortcut icon" href="https://www.bootstrapdash.com/demo/majestic-admin-pro/template/images/favicon.ico" />
 </head>
@@ -30,7 +30,7 @@
               </div>
               
               <h6 class="font-weight-light">Sign In.</h6>
-              <form method="post" class="pt-3" id="user_login_form" action="">
+              <form method="post" class="pt-3" id="user_login_form" action="<?=url('/projects/create') ?>">
                 <div class="form-group">
                   <input type="text" name="username" class="form-control form-control-lg" required placeholder="Username">
                 </div>
@@ -47,6 +47,7 @@
                       Keep me signed in
                     </label>
                   </div>
+                  <input type="hidden" name="_token" value="<?php echo csrf_token() ?>">
                   <a href="#" class="auth-link text-black">Forgot password?</a>
                 </div>
                 <!-- <div class="mb-2">
@@ -68,14 +69,14 @@
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
-  <script src="assets/js/vendor.bundle.base.js"></script> <!-- this is jqeury min file  -->
+  <script src="{{ asset('public/assets/js/vendor.bundle.base.js') }}"></script> <!-- this is jqeury min file  -->
   <!-- endinject -->
   <!-- Plugin js for this page-->
   <!-- End plugin js for this page-->
   <!-- inject:js -->
  
-  <script src="assets/js/jquery-validation/dist/jquery.validate.js"></script>
-  <script src="assets/js/login.js"></script>
+  <script src="{{ asset('public/assets/js/jquery-validation/dist/jquery.validate.js') }}"></script>
+  <script src="{{ asset('public/assets/js/login.js') }}"></script>
   <!-- <script src="assets/js/off-canvas.js"></script>
   <script src="assets/js/hoverable-collapse.js"></script>
   <script src="assets/js/template.js"></script>

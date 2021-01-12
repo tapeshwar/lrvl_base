@@ -13,7 +13,7 @@ $(document).ready(function () {
             //var btn = $('#user_login_form').loading('set');
             $.ajax({
                 type: "POST",
-                url: $('#user_login_form').attr('data-url'),
+                url: $('#user_login_form').attr('action'),
                 data: new FormData($('#user_login_form')[0]),
                 contentType: false,
 				cache: false,
