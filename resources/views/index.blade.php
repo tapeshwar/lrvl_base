@@ -654,10 +654,21 @@
       
       <div class="main-panel">
         <div class="content-wrapper">
+        @if (session('login_successful'))
+        <div class="row">
+        <div class="col-md-12">
+          <div class="alert alert-fill-primary" role="alert"><i class="mdi mdi-alert-circle"></i><a aria-label="Close " data-dismiss="alert" class="closed pull-right fa fa-times"></a>
+          {{ session('login_successful') }}
+          </div>
+        </div>
+        </div>
+        @endif
+
+        <div role="alert" class="alert  alert-success alert-dismissible"><a aria-label="Close " data-dismiss="alert" class="closed pull-right fa fa-times"></a><p>successfully updated.</p></div>
 
           <div class="row">
             <div class="col-md-12 grid-margin">
-            <div id="show_flush_data"> {{ session('login_successful') }}</div>
+            <div id="show_flush_data"> </div>
               <div class="d-flex justify-content-between flex-wrap">
                 <div class="d-flex align-items-end flex-wrap">
                   <div class="mr-md-3 mr-xl-5">
