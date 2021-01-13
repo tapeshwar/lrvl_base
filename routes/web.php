@@ -13,20 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('login');
-});
+}); */
 
-//Auth::routes();
+Route::get('/', 'UsersLoginController@index');
 
-Route::post('projects/create', 'UsersController@store');
-//Route::post('/user_login', 'UsersController@create');
-//Route::post('login', 'UsersController@login');
-
+Route::post('users/login', 'UsersLoginController@store');
+Route::get('users/home', 'UsersHomeController@index');
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Route::get('/the/url', 'YourController@method');

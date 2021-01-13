@@ -30,7 +30,7 @@
               </div>
               
               <h6 class="font-weight-light">Sign In.</h6>
-              <form method="post" class="pt-3" id="user_login_form" action="<?=url('/projects/create') ?>">
+              <form method="post" class="pt-3" id="user_login_form" action="<?=url('/users/login') ?>">
                 <div class="form-group">
                   <input type="text" name="username" class="form-control form-control-lg" required placeholder="Username">
                 </div>
@@ -76,7 +76,7 @@
   <!-- inject:js -->
  
   <script src="{{ asset('public/assets/js/jquery-validation/dist/jquery.validate.js') }}"></script>
-  <script src="{{ asset('public/assets/js/login.js') }}"></script>
+  <script src="{{ asset('public/assets/js/pages/login.js') }}"></script>
   <!-- <script src="assets/js/off-canvas.js"></script>
   <script src="assets/js/hoverable-collapse.js"></script>
   <script src="assets/js/template.js"></script>

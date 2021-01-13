@@ -18,14 +18,14 @@ $(document).ready(function () {
                 contentType: false,
 				cache: false,
 				processData: false,
-                //dataType: "json",
+                dataType: "json",
                 success: function (r) {
-                    alert(r);
-                    /* if(r.status=='success'){
+                    //alert(r);
+                     if(r.status=='success'){
                         window.location.href=r.url;
                     }else{
-                        console.log(r.status);
-                    } */
+                        console.log(r.msg);
+                    } 
                     //return false;
                 }
             }).always(function () {

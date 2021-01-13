@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-//use App\Models\User;
+use App\Models\UsersModel;
 
 //UserController 
-class UsersController extends Controller
-{
+class UsersLoginController extends Controller{
+
+    public function __construct()
+    {
+        $this->user_model = new UsersModel();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +21,7 @@ class UsersController extends Controller
     
     public function index()
     {
-        echo 'test';
+        return view('login');
     }
 
     /**
@@ -36,14 +40,41 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request){
         //url('/') // use for base url for post method
         //Request::root() // use for base url post method
         // URL::to('/') // use for base url post method
-        $postdata = $request->all();
+        $post = $request->all();
+        $username = $post['username'];
+        $password = $post['password'];
 
-        echo $postdata['username'];
+        /* $str = 'admin';
+        $options= ['t_salt'=>'fksafsf'];
+        $password = password_hash($str, PASSWORD_BCRYPT, $options); */    
+        //print_r($password);die;
+        $user = $this->user_model->userValidate($username,$password);
+      
+        if(!empty($user)){
+            if($user['status'] == 'success'){
+                $request->session()->put($user);
+                //$sess_userdata = $request->session()->all();
+                $ret = ['status'=>'success','url'=>url('users/home')];
+                $request->session()->flash('login_successful', 'Login successful!');
+                return $ret;
+            }
+            if($user['status'] == 'error'){
+                $ret = ['status'=>'error','msg'=>$user['msg']];
+                return $ret;
+            }   
+        }
+       exit();
+
+    }
+
+
+    public function userLogout(Request $request){
+        $request->session()->flush();
+        return view('login');
     }
 
     /**
