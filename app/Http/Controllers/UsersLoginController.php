@@ -44,7 +44,7 @@ class UsersLoginController extends Controller{
         //url('/') // use for base url for post method
         //Request::root() // use for base url post method
         // URL::to('/') // use for base url post method
-        $post = $request->all();
+        $post = $request->input();
         $username = $post['username'];
         $password = $post['password'];
 

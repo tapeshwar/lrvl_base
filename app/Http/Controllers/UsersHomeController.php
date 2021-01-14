@@ -22,7 +22,8 @@ class UsersHomeController extends Controller{
     public function index()
     {
         $data['title'] = 'Title';
-        return view('index')->with($data);
+        return view('templates/admin_template')->with($data);
+        //return view('index')->with($data);
     }
 
     
