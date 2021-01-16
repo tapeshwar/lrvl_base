@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'UsersLoginController@index');
 
 Route::post('users/login', 'UsersLoginController@store');
-Route::get('users/home', 'UsersHomeController@index');
+Route::get('users/home', 'Home@index');
 
 
 Auth::routes();

@@ -34,7 +34,4 @@
   
   <!-- End custom js for this page-->
   <script src="{{ asset('public/assets/js/jquery.cookie.js') }}"></script>
-  
-</body>
 
-</html>

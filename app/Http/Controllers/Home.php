@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\UsersModel;
 
 //UserController 
-class UsersHomeController extends Controller{
+class Home extends Controller{
 
     public function __construct()
     {
@@ -22,7 +22,7 @@ class UsersHomeController extends Controller{
     public function index()
     {
         $data['title'] = 'Title';
-        return view('templates/admin_template')->with($data);
+        return view('layouts/admin_layout')->with($data);
         //return view('index')->with($data);
     }
 
