@@ -6,13 +6,14 @@
         @if (session('login_successful'))
         <div class="row">
         <div class="col-md-12">
-          <div class="alert alert-fill-primary" role="alert"><i class="mdi mdi-alert-circle"></i>
-          <a aria-label="Close " data-dismiss="alert" class="closed pull-right fa fa-times"></a>
+        <div class="alert alert-success" role="alert"><a aria-label="Close " data-dismiss="alert" class="closed pull-right fa fa-times"></a>
           {{ session('login_successful') }}
           </div>
         </div>
         </div>
         @endif
+
+        
 
         <!-- <div role="alert" class="alert  alert-success alert-dismissible">
           <a aria-label="Close " data-dismiss="alert" class="closed pull-right fa fa-times"></a><p>successfully updated.</p></div> -->
